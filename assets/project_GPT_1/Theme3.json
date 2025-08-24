@@ -1,0 +1,33 @@
+﻿{
+    "name": "CustomTheme",
+    "visualStyles": {
+      "*": {
+        "*": {
+          "title": [
+            {
+              "fontFamily": "Nexa",
+              "fontSize": 16
+            }
+          ],
+          "labels": [
+            {
+              "fontFamily": "Nexa",
+              "fontSize": 12
+            }
+          ]
+        }
+      }
+    },
+    "textClasses": {
+      "header": {
+        "fontFamily": "Nexa"
+      },
+      "title": {
+        "fontFamily": "Nexa"
+      },
+      "paragraph": {
+        "fontFamily": "Nexa"
+      }
+    }
+  }
+  

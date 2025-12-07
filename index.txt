@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Yasser - Elite Flutter Developer</title>
+    <title>Ayman Rezk - Data Analyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -20,7 +20,7 @@
         :root {
             --primary-color: #6A1B9A;
             --primary-light: #8E24AA;
-            --primary-dark: #4A148C;
+            --primary-dark: #461483;
             --secondary-color: #9C27B0;
             --accent-color: #EC4899;
 
@@ -492,6 +492,48 @@
             letter-spacing: 0.5px;
         }
 
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .service-card {
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+            border-color: var(--primary-light);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
         /* Skills Section */
         .skills-category {
             margin-bottom: 3rem;
@@ -658,7 +700,7 @@
         }
 
         .project-card:hover {
-            transform: scale(1.03); /* Scale up on hover */
+            transform: translateY(-10px) scale(1.03); /* Enhanced hover effect */
             box-shadow: var(--shadow-heavy); /* Lift shadow on hover */
             border-color: var(--primary-light);
         }
@@ -718,6 +760,53 @@
             border-color: var(--primary-dark);
             transform: translateY(-3px);
         }
+
+        .project-card.image-card {
+            overflow: hidden; /* يخلي الصورة جوا الكارت */
+            padding: 0; /* نشيل البادينج اللي كان للكارت الأساسي */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card.image-card .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            transition: all 0.4s ease-in-out;
+            filter: var(--image-filter);
+        }
+
+        .project-card.image-card:hover .project-image {
+            transform: scale(1.05);
+            filter: var(--image-filter-hover);
+        }
+
+        /* المحتوى يبقى تحت الصورة */
+        .project-card.image-card .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+
+        /* Light theme */
+        :root {
+            --image-filter: brightness(1.16) contrast(0.75);
+            --image-filter-hover: brightness(1) contrast(1);
+        }
+
+        /* Dark theme */
+        [data-theme="dark"] {
+            --image-filter: brightness(0.7) contrast(1.1);
+            --image-filter-hover: brightness(0.85) contrast(1.1);
+        }
+
 
         /* Testimonials Section */
         .testimonials-container {
@@ -1015,6 +1104,35 @@
             background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
         }
 
+        /* Scroll-to-top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        .author-avatar {
+            font-size: 40px; 
+        }
+
+
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -1192,7 +1310,36 @@
             opacity: 1;
             transform: scale(1);
         }
+
+
+    .hero-hook {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--primary-color);
+        margin-bottom: 0.2rem;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeInUp 1s forwards 0.3s;
+    }
+
+    .hero-hook-subtitle {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        transform: translateY(-10px);
+        animation: fadeInUp 1s forwards 0.5s;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     </style>
+
 </head>
 <body>
     <div id="preloader">
@@ -1201,10 +1348,11 @@
 
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Mohamed Yasser</a>
+            <a href="#" class="logo">Ayman Rezk</a>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -1222,6 +1370,7 @@
         <ul class="mobile-nav-links">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -1232,43 +1381,52 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm Mohamed Yasser.</h1>
-                <p class="hero-subtitle">An Elite Flutter Developer</p>
+                <!--  -->
+                <h2 class="hero-title">Hi, I'm Ayman Rezk.</h2>
+                <p class="hero-subtitle">Data Analyst</p>
+
+                <!--  -->
                 <p class="hero-description">
-                    Passionate about crafting beautiful and highly functional mobile applications.
-                    I transform ideas into seamless and engaging user experiences.
+                    <strong>Data Speaks. I Make It Clear.</strong><br>
+                    Every number has a story → let’s uncover insights, reveal patterns, and drive smarter decisions with real impact.
                 </p>
+
+
+                <!--  -->
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-eye"></i> View My Work
                     </a>
-                    <a href="https://docs.google.com/document/d/1Lv7c0Kl9BH7uFZlmPtwdWA0OlsfIRI3j/edit?usp=drive_link&ouid=106633612953213316002&rtpof=true&sd=true" download class="btn btn-secondary">
+                    <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i> Get In Touch
                     </a>
                 </div>
             </div>
         </section>
 
+
     <section id="about" class="section">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://avatars.githubusercontent.com/u/42767131?v=4" alt="Mohamed Yasser" class="profile-image">
+                <img src="images\me.png" alt="Ayman Rezk" class="profile-image"> 
             </div>
             <div class="about-text">
                 <p>
-                    Hello! I'm Mohamed Yasser, a dedicated and innovative Flutter developer with a strong passion for building
-                    cross-platform mobile applications. My journey in development began with a fascination for
-                    creating intuitive user interfaces and robust backend systems.
+                    Ever since I can remember, I’ve been driven by curiosity and the pursuit of truth.
+                    Numbers tell stories—hidden within them are insights waiting to be uncovered, 
+                    and that’s where I thrive.
                 </p>
                 <p>
-                    With a solid foundation in Flutter, Dart, and related technologies, I specialize in
-                    turning complex ideas into elegant and efficient mobile solutions. I thrive on solving challenges
-                    and continuously learning new technologies to deliver high-quality products.
+                    As a Data Analyst, 
+                    I dive deep into data, extract meaningful patterns, 
+                    and transform them into insights that guide smarter decisions and create real impact.
                 </p>
                 <p>
-                    Beyond coding, I'm a firm believer in clean architecture, test-driven development, and collaborative environments.
-                    I'm always looking for opportunities to contribute to impactful projects and grow as a developer.
+                    My journey has been shaped by a unique blend of analytical thinking and social intelligence. 
+                    Whether it’s breaking down complex datasets, crafting compelling narratives, 
+                    engaging audiences through public speaking, 
+                    or contributing to volunteer work—I always find ways to connect logic with human insight.
                 </p>
                 <div class="about-details">
                 </div>
@@ -1276,73 +1434,121 @@
         </div>
         <div class="stats-container">
             <div class="stat-card">
-                <div class="stat-number">5+</div>
+                <div class="stat-number">1+</div>
                 <div class="stat-label">Years Experience</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">20+</div>
+                <div class="stat-number">10+</div>
                 <div class="stat-label">Projects Completed</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">10+</div>
+                <div class="stat-number">5+</div>
                 <div class="stat-label">Happy Clients</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">1k+</div>
-                <div class="stat-label">Cups of Coffee</div>
+                <div class="stat-label">Cups of tea</div>
             </div>
         </div>
     </section>
 
+
+    <section id="services" class="section">
+        <h2 class="section-title">Services I Offer</h2>
+        <div class="services-grid">
+            
+            <!-- Service 1: Dashboards -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                <h3 class="service-title">Interactive Dashboards</h3>
+                <p class="service-description">
+                    Designing insightful and interactive dashboards using Power BI to help businesses track KPIs and make data-driven decisions.
+                </p>
+            </div>
+
+            <!-- Service 2: Data Analysis -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-database"></i></div>
+                <h3 class="service-title">End-to-End Data Analysis</h3>
+                <p class="service-description">
+                    Performing complete data analysis workflows: cleaning, exploration, visualization, and delivering actionable insights that support strategic growth.
+                </p>
+            </div>
+
+            <!-- Service 3: Machine Learning -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-robot"></i></div>
+                <h3 class="service-title">Machine Learning Solutions</h3>
+                <p class="service-description">
+                    Building and training machine learning models to uncover patterns and provide predictive insights that can guide future business decisions.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
     <section id="skills" class="section">
         <h2 class="section-title">My Skills</h2>
-        <div class="skills-category">
-            <h3 class="skills-category-title">Frontend Development (Flutter)</h3>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fab fa-dev skill-icon"></i>
-                    <span class="skill-name">Flutter</span>
-                </div>
-                <div class="skill-card">
-                        <i class="fas fa-code skill-icon"></i>
-                        <span class="skill-name">Dart</span>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-mobile-alt skill-icon"></i>
-                        <span class="skill-name">Responsive Design</span>
-                    </div>
-                <div class="skill-card">
-                    <i class="fas fa-cubes skill-icon"></i>
-                    <span class="skill-name">State Management (Provider, BLoC)</span>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-network-wired skill-icon"></i>
-                    <span class="skill-name">API Integration</span>
-                </div>
-            </div>
-        </div>
 
+        <!-- Programming Languages -->
         <div class="skills-category">
-            <h3 class="skills-category-title">Backend & Database</h3>
+            <h3 class="skills-category-title">Programming Languages</h3>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-fire skill-icon"></i>
-                    <span class="skill-name">Firebase</span>
+                    <i class="fab fa-python skill-icon"></i>
+                    <span class="skill-name">Python</span>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-database skill-icon"></i>
-                    <span class="skill-name">SQL/NoSQL</span>
+                    <span class="skill-name">SQL</span>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-server skill-icon"></i>
-                    <span class="skill-name">RESTful APIs</span>
+                    <i class="fab fa-r-project skill-icon"></i>
+                    <span class="skill-name">R (basic)</span>
                 </div>
             </div>
         </div>
 
+        <!-- Libraries -->
         <div class="skills-category">
-            <h3 class="skills-category-title">Tools & Others</h3>
+            <h3 class="skills-category-title">Libraries</h3>
             <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-robot skill-icon"></i>
+                    <span class="skill-name">Scikit-learn</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-bar skill-icon"></i>
+                    <span class="skill-name">Matplotlib</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-pie skill-icon"></i>
+                    <span class="skill-name">Seaborn</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cogs skill-icon"></i>
+                    <span class="skill-name">Pandas & NumPy</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skills-category">
+            <h3 class="skills-category-title">Tools</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-chart-line skill-icon"></i>
+                    <span class="skill-name">Power BI</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-file-excel skill-icon"></i>
+                    <span class="skill-name">Excel</span>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-book skill-icon"></i>
+                    <span class="skill-name">Jupyter Notebook</span>
+                </div>
                 <div class="skill-card">
                     <i class="fab fa-git-alt skill-icon"></i>
                     <span class="skill-name">Git</span>
@@ -1351,364 +1557,497 @@
                     <i class="fab fa-github skill-icon"></i>
                     <span class="skill-name">GitHub</span>
                 </div>
+            </div>
+        </div>
+
+        <!-- Extra / Soft Skills -->
+        <div class="skills-category">
+            <h3 class="skills-category-title">Other Skills</h3>
+            <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-code-branch skill-icon"></i>
-                    <span class="skill-name">Version Control</span>
+                    <i class="fas fa-users skill-icon"></i>
+                    <span class="skill-name">Data Storytelling</span>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-bug skill-icon"></i>
-                    <span class="skill-name">Debugging</span>
+                    <i class="fas fa-chalkboard-teacher skill-icon"></i>
+                    <span class="skill-name">Presentation & Public Speaking</span>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-project-diagram skill-icon"></i>
-                    <span class="skill-name">Agile Methodologies</span>
+                    <i class="fas fa-lightbulb skill-icon"></i>
+                    <span class="skill-name">Problem Solving</span>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section id="learning" class="section">
         <h2 class="section-title">What I'm Learning</h2>
         <div class="learning-grid">
             <div class="learning-card">
-                <div class="learning-icon"><i class="fas fa-rocket"></i></div>
+                <div class="learning-icon"><i class="fas fa-chart-line"></i></div>
                 <div class="learning-info">
-                    <h3>Advanced Flutter Animations</h3>
-                    <p>Exploring complex UI animations and transitions to create more dynamic and engaging user experiences.</p>
+                    <h3>Data Storytelling</h3>
+                    <p>Improving my ability to communicate insights clearly and effectively using visualizations and narratives.</p>
                 </div>
             </div>
             <div class="learning-card">
-                <div class="learning-icon"><i class="fas fa-server"></i></div>
+                <div class="learning-icon"><i class="fas fa-database"></i></div>
                 <div class="learning-info">
-                    <h3>Server-Side Dart</h3>
-                    <p>Learning to build scalable and efficient backends with Dart, enabling full-stack development with a single language.</p>
+                    <h3>SQL & Data Warehousing</h3>
+                    <p>Deepening my understanding of SQL and learning how to design efficient queries and manage large datasets.</p>
                 </div>
             </div>
             <div class="learning-card">
-                <div class="learning-icon"><i class="fas fa-cogs"></i></div>
+                <div class="learning-icon"><i class="fas fa-brain"></i></div>
                 <div class="learning-info">
-                    <h3>WebAssembly with Dart</h3>
-                    <p>Investigating how to compile Dart to WebAssembly for high-performance web applications.</p>
+                    <h3>Machine Learning Basics</h3>
+                    <p>Exploring how to build and evaluate ML models to support data-driven decision making.</p>
                 </div>
             </div>
         </div>
     </section>
 
-        <section id="experience" class="section">
-            <h2 class="section-title">Experience & Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3>Senior Flutter Developer</h3>
-                        <p>Tech Solutions Inc.</p>
-                        <span>Jan 2022 - Present</span>
-                        <p>Led development of high-performance mobile apps, mentored junior developers, and implemented new features.</p>
-                    </div>
-                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline">
+
+            <!-- Freelance Khamsat -->
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Freelance Data Analyst</h3>
+                    <p>Khamsat.com | خمسات</p>
+                    <span>Jun 2024 – Present · Remote</span>
+                    <p>Delivered professional data analysis services including data cleaning, visualization, and dashboard creation. Helped clients transform raw data into actionable insights for business decision-making.</p>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3>Flutter Developer</h3>
-                        <p>Innovate Mobile</p>
-                        <span>Mar 2019 - Dec 2021</span>
-                        <p>Developed and maintained various Flutter applications, collaborated with cross-functional teams.</p>
-                    </div>
-                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3>B.Sc. in Computer Science</h3>
-                        <p>University of Alexandria</p>
-                        <span>Sep 2015 - Jun 2019</span>
-                        <p>Graduated with honors, specialized in software engineering and mobile development.</p>
-                    </div>
-                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                </div>
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
             </div>
-            <div class="resume-download-btn">
-                <a href="https://docs.google.com/document/d/1Lv7c0Kl9BH7uFZlmPtwdWA0OlsfIRI3j/edit?usp=drive_link&ouid=106633612953213316002&rtpof=true&sd=true" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
+
+            <!-- DEPI Internship -->
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Microsoft AI & Data Science Trainee – DEPI</h3>
+                    <p>Digital Egypt Pioneers Initiative (DEPI) in collaboration with Microsoft</p>
+                    <span>Jun 2025 – Present · Hybrid (Alexandria, Egypt)</span>
+                    <p>Enrolled in the AI & Data Science Track covering Python, statistics, machine learning, computer vision, NLP, and MLOps — preparing for industry-level AI engineering roles.</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
             </div>
-        </section>
+
+            <!-- Creativa Internship -->
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>Data Science Intern</h3>
+                    <p>Creativa Hub Alexandria</p>
+                    <span>Aug 2024 – Aug 2024 · On-site</span>
+                    <p>Worked on real-world datasets: applied preprocessing, feature engineering, and model building. Collaborated with peers to design small-scale machine learning solutions.</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+            </div>
+
+            <!-- Education -->
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <h3>B.Sc. in Data Science</h3>
+                    <p>Faculty of Computers and Data Science, Alexandria University</p>
+                    <span>Sep 2022 – Jun 2026</span>
+                    <p>Specialized in data science, statistics, and machine learning. Engaged in projects combining theory with practical applications.</p>
+                </div>
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+            </div>
+        </div>
+
+        <!-- Resume Button -->
+        <div class="resume-download-btn">
+            <a href="assets/AymanRezkCV.pdf" class="btn btn-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Resume
+            </a>
+        </div>
+    </section>
+
 
     <section id="projects" class="section animate-on-scroll animate-slide-in-left">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Coding Projects</h2>
             <div class="projects-grid" id="github-projects-grid">
                 <!-- Projects will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+
+    <section id="powerbi-projects" class="section animate-on-scroll animate-slide-in-left">
+        <h2 class="section-title">BI Dashboards</h2>
+        <div class="projects-grid">
+
+            <!-- Example 1 -->
+            <div class="project-card image-card">
+                <div class="project-image" >
+                    <img src="assets\PowerBI\Parfiam_Noon\Screenshot.png" 
+                        alt="Sales Dashboard" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Perfume Sales Dashboard</h3>
+                    <p class="project-description">Insights on pricing, categories, brands, ratings, fragrance notes, and discount impact.</p>
+                    <div class="project-links">
+                        <a href="assets/PowerBI/Parfiam_Noon/Perfume_Sales_Dashboard.pbix" class="project-link" target="_blank">
+                            <i class="fas fa-download"></i> Download PBIX
+                        </a>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <!-- Example 2 -->
+            <div class="project-card image-card">
+                <div class="project-image" >
+                    <img src="assets\project_GPT_1\Screenshot.png" 
+                        alt="Sales Dashboard" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Sales Overview Dashboard</h3>
+                    <p class="project-description">Interactive dashboard summarizing KPIs, regional sales, product performance, and monthly trends.</p> 
+                    <div class="project-links">
+                        <a href="assets\project_GPT_1\Sales_Overview_Dashboard.pbix" class="project-link" target="_blank">
+                            <i class="fas fa-download"></i> Download PBIX
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Example 3 -->
+            <div class="project-card image-card">
+                <div class="project-image" >
+                    <img src="assets\PowerBI\Final_DVIS\Screenshot.png" 
+                        alt="Sales Dashboard" 
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Financial Sales Overview</h3>
+                    <p class="project-description">Sales, profit, customer segments, product performance, yearly trends, and geography.</p>
+                    <div class="project-links">
+                        <a href="assets\PowerBI\Final_DVIS\Financial_Sales_Overview.pbix" class="project-link" target="_blank">
+                            <i class="fas fa-download"></i> Download PBIX
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
 
     <section id="testimonials" class="section">
         <h2 class="section-title">Testimonials</h2>
         <div class="testimonials-container">
-            <div class="testimonial-card">
+
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" style="text-align: center;">
                 <div class="testimonial-content">
-                    <p>"Mohamed is a highly skilled developer who consistently delivers exceptional results. His attention to detail and commitment to quality are truly impressive. I would highly recommend him for any Flutter project."</p>
+                    <p>"إنسان رائع وسريع بالتعامل، وإن شاء الله هذه ليست آخر مرة أتعامل معه. أنصح الجميع يجرب وماراح يندم إن شاء الله. شكرًا كثير أستاذ أيمن على الخدمة."</p>
                 </div>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-avatar">
-                    <div class="author-info">
-                        <span class="author-name">John Doe</span>
-                        <span class="author-role">CEO, Tech Solutions Inc.</span>
+                <div class="testimonial-author" style="margin-top: 1rem;">
+                <span style= "display: flex; justify-content: center; align-items: center; width: 60px; height: 60px; border-radius: 50%; background-color: #5d4766; font-size: 2rem;">👨🏻‍🦱</span>
+                    <div class="author-info" style="margin-top: 0.5rem;">
+                        <span class="author-name">رياض أ.</span><br>
+                        <span class="author-role">المشتري منذ 8 أشهر</span>
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card">
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" style="text-align: center;">
                 <div class="testimonial-content">
-                    <p>"Working with Mohamed was a pleasure. He is a clear communicator and a talented developer who is passionate about his work. I look forward to collaborating with him on future projects."</p>
+                    <p>"شغل ممتاز ودقيق وسريع بالتنفيذ! ألف شكر."</p>
                 </div>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-avatar">
-                    <div class="author-info">
-                        <span class="author-name">Jane Smith</span>
-                        <span class="author-role">Project Manager, Innovate Mobile</span>
+                <div class="testimonial-author" style="margin-top: 1rem;">
+                <span style= "display: flex; justify-content: center; align-items: center; width: 60px; height: 60px; border-radius: 50%; background-color: #5d4766; font-size: 2rem;">👩🏻</span>
+                    <div class="author-info" style="margin-top: 0.5rem;">
+                        <span class="author-name">Sara A.</span><br>
+                        <span class="author-role">المشتري منذ 10 أشهر</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" style="text-align: center;">
+                <div class="testimonial-content">
+                    <p>"أستاذ أيمن أنت إنسان خلوق ومهتم بعملك. مرن في التعديلات ويسمع لطلبات العميل ولا يمل. كما أنه يقترح أفكار مفيدة. بإذن الله هذا ليس آخر تعامل."</p>
+                </div>
+                <div class="testimonial-author" style="margin-top: 1rem;">
+                <span style= "display: flex; justify-content: center; align-items: center; width: 60px; height: 60px; border-radius: 50%; background-color: #5d4766; font-size: 2rem;">👨🏻</span>
+                    <div class="author-info" style="margin-top: 0.5rem;">
+                        <span class="author-name">بيشوي ي.</span><br>
+                        <span class="author-role">المشتري منذ 10 أشهر</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    
 
     <section id="contact" class="section animate-on-scroll animate-slide-in-right">
         <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Feel free to reach out to discuss your project, collaboration opportunities, or just to say hello!</p>
-                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mohamedyasser.alkotp@gmail.com" style="color:var(--text-secondary); text-decoration:none;">mohamedyasser.alkotp@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +20 0127302282</p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> New Borg El Arab, Alexandria Governorate, Egypt</p>
-                <div class="social-links">
-                    <a href="https://github.com/moyasserelkotp" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mohamed-elkotp-bb9b3b272" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com/M0xYasser" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
-                    </div>
+        <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+
+            <!-- Contact Info -->
+            <div class="contact-info" style="flex: 1; min-width: 280px;">
+                <h3>Let's Create Something Incredible Together!</h3>
+                <p>Have data or a project you want to explore?<br>Send me a message, and let's turn it into actionable insights!</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> 
+                <a href="mailto:aymanrizk123456789@gmail.com" style="color:var(--text-secondary); text-decoration:none;">
+                    aymanrizk123456789@gmail.com
+                </a>
+                </p>
+                <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +20 1279496786</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Alexandria Governorate, Egypt</p>
+                <div class="social-links" style="margin-top: 1rem;">
+                    <a href="https://github.com/AymanRezk2" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/aymanrezk" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
-            <div class="contact-form">
+
+            <!-- Contact Form -->
+            <div class="contact-form" style="flex: 1; min-width: 280px;">
                 <h3>Send Me a Message</h3>
                 <form action="#" method="POST" id="contactForm">
                     <div class="form-group">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-input" required>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
                         <div class="form-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
                         <div class="form-error"></div>
                     </div>
                     <div class="form-group">
                         <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-input">
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject of your message">
                     </div>
                     <div class="form-group">
                         <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Type your message here..." required></textarea>
                         <div class="form-error"></div>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
-                    <div id="form-thank-you" style="display:none; margin-top: 1rem; color: var(--primary-color);">Thank you for your message!</div>
+                    <div id="form-thank-you" style="display:none; margin-top: 1rem; color: var(--primary-color);">
+                        Thank you for your message!
+                    </div>
                 </form>
             </div>
+
         </div>
     </section>
 
+
+
     <footer>
-        <p>&copy; 2024 Mohamed Yasser. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Ayman Rezk. All rights reserved.</p>
     </footer>
+
+    <a href="#hero" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Preloader
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                window.addEventListener('load', () => {
-                    preloader.classList.add('hidden');
-                });
+    document.addEventListener('DOMContentLoaded', () => {
+        // ------------------ Preloader ------------------
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+                preloader.classList.add('hidden');
+            });
+        }
+
+        // ------------------ Theme Toggle ------------------
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
             }
+        }
 
-            // Theme Toggle
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
-            const currentTheme = localStorage.getItem('theme');
-
-            if (currentTheme) {
-                document.documentElement.setAttribute('data-theme', currentTheme);
-                if (currentTheme === 'dark') {
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            }
-            themeToggle.addEventListener('click', () => {
-                let theme = document.documentElement.getAttribute('data-theme');
-                if (theme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'light');
-                    localStorage.setItem('theme', 'light');
-                    themeIcon.classList.replace('fa-sun', 'fa-moon');
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                    themeIcon.classList.replace('fa-moon', 'fa-sun');
-                }
-            });
-
-            // Hamburger Menu for Mobile
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const mobileNavLinks = document.querySelector('.mobile-nav-links');
-
-            hamburgerMenu.addEventListener('click', () => {
-                mobileNavLinks.classList.toggle('active');
-            });
-
-            // Close mobile nav when a link is clicked
-            mobileNavLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNavLinks.classList.remove('active');
-                });
-            });
-
-            // Smooth Scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Fetch GitHub Projects
-            async function fetchGithubProjects() {
-                const projectsGrid = document.getElementById('github-projects-grid');
-                const projectRepos = [
-                    'https://api.github.com/repos/moyasserelkotp/Clean_Architecture-Movies-App-',
-                    'https://api.github.com/repos/moyasserelkotp/Bea_shop',
-                    'https://api.github.com/repos/moyasserelkotp/MyNote',
-                    'https://api.github.com/repos/moyasserelkotp/My_Money',
-                    'https://api.github.com/repos/moyasserelkotp/Smart_classs_room',
-                    'https://api.github.com/repos/moyasserelkotp/Responsive_Dashboard',
-                    'https://api.github.com/repos/moyasserelkotp/trend_block_version_one',
-                    'https://api.github.com/repos/moyasserelkotp/BMI_Calculater_update'
-                ];
-
-                projectsGrid.innerHTML = '<div class="spinner"></div>'; // Show spinner
-
-                try {
-                    const fetchPromises = projectRepos.map(url =>
-                        fetch(url).then(response => {
-                            if (!response.ok) {
-                                console.error(`Error fetching ${url}: ${response.status} ${response.statusText}`);
-                                return null;
-                            }
-                            return response.json();
-                        }).catch(error => {
-                            console.error(`Network error fetching ${url}:`, error);
-                            return null;
-                        })
-                    );
-
-                    const allReposData = await Promise.all(fetchPromises);
-                    const validRepos = allReposData.filter(repo => repo !== null);
-
-                    if (validRepos.length === 0) {
-                        projectsGrid.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No projects found.</p>';
-                        return;
-                    }
-
-                    validRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-
-                    projectsGrid.innerHTML = ''; // Clear spinner
-
-                    validRepos.forEach(repo => {
-                        const projectCard = document.createElement('div');
-                        projectCard.classList.add('project-card');
-
-                        const projectName = repo.name.replace(/[-_]/g, ' ');
-                        const projectDescription = repo.description ? (repo.description.length > 100 ? repo.description.substring(0, 100) + '...' : repo.description) : 'A brief description of the project.';
-
-                        projectCard.innerHTML = `
-                            <div class="project-icon"><i class="fas fa-code"></i></div>
-                            <div class="project-content">
-                                <h3 class="project-title">${projectName}</h3>
-                                <p class="project-description">${projectDescription}</p>
-                                <div class="project-links">
-                                    <a href="${repo.html_url}" class="project-link" target="_blank">
-                                        <i class="fab fa-github"></i> GitHub Repo
-                                    </a>
-                                </div>
-                            </div>
-                        `;
-                        projectsGrid.appendChild(projectCard);
-                    });
-                } catch (error) {
-                    console.error('Error fetching GitHub projects:', error);
-                    projectsGrid.innerHTML = '<p style="text-align: center; color: var(--text-muted);">Failed to load projects.</p>';
-                } finally {
-                    // Optional: remove spinner if it wasn't replaced
-                }
-            }
-
-            fetchGithubProjects();
-
-            // Contact Form Validation
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                let isValid = true;
-
-                const name = document.getElementById('name');
-                const email = document.getElementById('email');
-                const message = document.getElementById('message');
-
-                if (name.value.trim() === '') {
-                    isValid = false;
-                    showError(name, 'Name is required.');
-                } else {
-                    hideError(name);
-                }
-
-                if (email.value.trim() === '') {
-                    isValid = false;
-                    showError(email, 'Email is required.');
-                } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
-                    isValid = false;
-                    showError(email, 'Please enter a valid email address.');
-                } else {
-                    hideError(email);
-                }
-
-                if (message.value.trim() === '') {
-                    isValid = false;
-                    showError(message, 'Message is required.');
-                } else {
-                    hideError(message);
-                }
-
-                if (isValid) {
-                    // Replace with actual form submission logic (e.g., AJAX call)
-                    console.log('Form submitted successfully!');
-                    document.getElementById('form-thank-you').style.display = 'block';
-                    contactForm.reset();
-                }
-            });
-
-            function showError(input, message) {
-                const formGroup = input.parentElement;
-                const error = formGroup.querySelector('.form-error');
-                error.textContent = message;
-                input.classList.add('is-invalid');
-            }
-
-            function hideError(input) {
-                const formGroup = input.parentElement;
-                const error = formGroup.querySelector('.form-error');
-                error.textContent = '';
-                input.classList.remove('is-invalid');
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
             }
         });
+
+        // ------------------ Hamburger Menu ------------------
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileNavLinks = document.querySelector('.mobile-nav-links');
+
+        hamburgerMenu.addEventListener('click', () => {
+            mobileNavLinks.classList.toggle('active');
+        });
+
+        mobileNavLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavLinks.classList.remove('active');
+            });
+        });
+
+        // ------------------ Scroll-to-top ------------------
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        window.addEventListener('scroll', () => {
+            scrollToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+        });
+
+        // ------------------ Smooth Scrolling ------------------
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // ------------------ Animate on Scroll ------------------
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('animate-fade-in');
+                else entry.target.classList.remove('animate-fade-in');
+            });
+        });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // ------------------ Fetch GitHub Projects ------------------
+        async function fetchGithubProjects() {
+            const projectsGrid = document.getElementById('github-projects-grid');
+            const projectRepos = [
+                'https://api.github.com/repos/AymanRezk2/50_Startups_Liner_regration',
+                'https://api.github.com/repos/AymanRezk2/car-insurance-claim-EDA'
+            ];
+
+            projectsGrid.innerHTML = '<div class="spinner"></div>';
+
+            try {
+                const fetchPromises = projectRepos.map(url =>
+                    fetch(url)
+                    .then(res => res.ok ? res.json() : null)
+                    .catch(err => null)
+                );
+
+                const allReposData = await Promise.all(fetchPromises);
+                const validRepos = allReposData.filter(repo => repo !== null);
+
+                if (validRepos.length === 0) {
+                    projectsGrid.innerHTML = '<p style="text-align:center;color:var(--text-muted)">No projects found.</p>';
+                    return;
+                }
+
+                validRepos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+                projectsGrid.innerHTML = '';
+
+                validRepos.forEach(repo => {
+                    const projectCard = document.createElement('div');
+                    projectCard.classList.add('project-card');
+                    const projectName = repo.name.replace(/[-_]/g, ' ');
+                    const projectDescription = repo.description ? (repo.description.length > 100 ? repo.description.substring(0,100)+'...' : repo.description) : 'A brief description of the project.';
+
+                    projectCard.innerHTML = `
+                        <div class="project-icon"><i class="fas fa-code"></i></div>
+                        <div class="project-content">
+                            <h3 class="project-title">${projectName}</h3>
+                            <p class="project-description">${projectDescription}</p>
+                            <div class="project-links">
+                                <a href="${repo.html_url}" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> GitHub Repo
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    projectsGrid.appendChild(projectCard);
+                });
+            } catch {
+                projectsGrid.innerHTML = '<p style="text-align:center;color:var(--text-muted)">Failed to load projects.</p>';
+            }
+        }
+
+        fetchGithubProjects();
+
+        // ------------------ Testimonials Carousel ------------------
+        $('.testimonials-container').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+            autoplay: true,
+            autoplaySpeed: 5000,
+            arrows: false,
+        });
+
+        // ------------------ EmailJS Initialization ------------------
+        emailjs.init('A0vwECOW8hLjsaepw'); // Public Key
+
+        // ------------------ Contact Form ------------------
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+
+            let isValid = true;
+
+            if (name.value.trim() === '') { isValid=false; showError(name,'Name is required.'); } else hideError(name);
+            if (email.value.trim() === '') { isValid=false; showError(email,'Email is required.'); } 
+            else if(!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) { isValid=false; showError(email,'Enter valid email.'); } else hideError(email);
+            if (message.value.trim() === '') { isValid=false; showError(message,'Message is required.'); } else hideError(message);
+
+            if(isValid){
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                emailjs.send(
+                    'service_51uuijn', // Service ID
+                    'template_uonr6nn', // Template ID
+                    { name: name.value, email: email.value, subject: subject.value, message: message.value }
+                ).then(() => {
+                    document.getElementById('form-thank-you').style.display='block';
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                }).catch(err => {
+                    console.error('EmailJS error:', err);
+                    alert('Failed to send message. Try again later.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                });
+            }
+        });
+
+        function showError(input, msg){ const error=input.parentElement.querySelector('.form-error'); error.textContent=msg; input.classList.add('is-invalid'); }
+        function hideError(input){ const error=input.parentElement.querySelector('.form-error'); error.textContent=''; input.classList.remove('is-invalid'); }
+
+        // ------------------ Update Year ------------------
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    });
     </script>
+
 </body>
 </html>

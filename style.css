@@ -10,10 +10,10 @@
 }
 
 :root {
-    --primary-color: #103A5C;
+    --primary-color: #10426a;
         /* navy */
         --primary-light: #285C7A;
-        --primary-dark: #0A243B;
+        --primary-dark: #0a2b49;
         --secondary-color: #0F9BA8;
         /* teal */
         --accent-color: #F4A259;
@@ -31,7 +31,7 @@
         --text-muted-dark: #94A3B8;
         --bg-color-dark: #050B15;
         --bg-secondary-dark: #0F1826;
-        --border-color-dark: #1E2A3A;
+        --border-color-dark: #243b5a;
 
     --bg-color: var(--bg-color-light);
     --bg-secondary: var(--bg-secondary-light);
@@ -79,8 +79,8 @@ body {
         inset: 0;
         pointer-events: none;
         background-image:
-            linear-gradient(transparent 95%, rgba(15, 58, 92, 0.08) 95%),
-            linear-gradient(90deg, transparent 95%, rgba(15, 58, 92, 0.08) 95%);
+            linear-gradient(transparent 95%, rgba(26, 78, 118, 0.08) 95%),
+                linear-gradient(90deg, transparent 95%, rgba(20, 76, 119, 0.08) 95%);
         background-size: 140px 140px;
         opacity: 0.35;
         z-index: -2;
@@ -605,21 +605,36 @@ nav {
     border-color: var(--primary-light);
 }
 
+/* .service-icon {
+    font-size: 2.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--primary-color);
+} */
 .service-icon {
     font-size: 2.3rem;
     margin-bottom: 1.2rem;
     color: var(--primary-color);
+    display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
 }
 
 .service-title {
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 0.7rem;
+    margin-left: auto;
+        margin-right: auto;
+        text-align: center;
 }
 
 .service-description {
     font-size: 0.98rem;
     color: var(--text-muted);
+        margin-left: auto;
+            margin-right: auto;
+            text-align: center;
 }
 
 /* =========================
@@ -688,6 +703,9 @@ nav {
 .skill-name {
     font-weight: 700;
     font-size: 1rem;
+        margin-left: auto;
+            margin-right: auto;
+            text-align: center;
 }
 
 /* =========================
@@ -718,9 +736,19 @@ nav {
     border-color: var(--primary-light);
 }
 
+/* .learning-icon {
+    font-size: 2.1rem;
+    color: var(--accent-color);
+    
+} */
 .learning-icon {
     font-size: 2.1rem;
     color: var(--accent-color);
+    display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        text-align: center;
 }
 
 .learning-info h3 {
@@ -885,12 +913,18 @@ nav {
     font-size: 2.4rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+            margin-left: auto;
+                margin-right: auto;
+                text-align: center;
 }
 
 .project-title {
     font-size: 1.35rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+            margin-left: auto;
+                margin-right: auto;
+                text-align: center;
 }
 
 .project-description {
@@ -902,6 +936,7 @@ nav {
 .project-links {
     display: flex;
     justify-content: flex-start;
+    
 }
 
 .project-link {

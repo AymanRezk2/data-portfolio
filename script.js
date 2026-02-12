@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!projectsGrid) return;
 
         const projectRepos = [
+            'https://api.github.com/repos/AymanRezk2/BCI-Intent-Detection',
             'https://api.github.com/repos/AymanRezk2/50_Startups_Liner_regration',
             'https://api.github.com/repos/AymanRezk2/car-insurance-claim-EDA',
             'https://api.github.com/repos/AymanRezk2/student-performance-analysis-prediction'

@@ -960,6 +960,7 @@ nav {
     transform: translateY(-2px);
 }
 
+
 /* =========================
    Testimonials
    ========================= */
@@ -968,55 +969,128 @@ nav {
     margin-top: 2.8rem;
 }
 
+/* Testimonial Card */
 .testimonial-card {
     background: var(--bg-secondary);
-    padding: 2.4rem 2.1rem;
+    padding: 2.5rem 2.5rem 2.2rem;
     border-radius: 18px;
     border: 1px solid var(--border-color);
     position: relative;
     box-shadow: var(--shadow-light);
+
+    min-height: 280px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+
+/* =========================
+   Rating
+   ========================= */
+
+.testimonial-rating {
+    text-align: center;
+
+    font-size: 1.15rem;
+    letter-spacing: 4px;
+
+    color: var(--primary-color);
+
+    margin-bottom: 1.3rem;
+    line-height: 1;
+}
+
+
+/* =========================
+   Testimonial Content
+   ========================= */
 
 .testimonial-content {
     font-style: italic;
     color: var(--text-secondary);
+
     margin-bottom: 1.8rem;
-    position: relative;
-    line-height: 1.8;
+
+    line-height: 1.9;
+
+    /* Center the review */
+    text-align: center;
+
+    max-width: 760px;
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
+/* =========================
+   Client
+   ========================= */
 
 .testimonial-author {
     display: flex;
     align-items: center;
     gap: 1rem;
+
     border-top: 1px dotted var(--border-color);
     padding-top: 1.1rem;
+
+    /* Keep client on the left */
+    justify-content: flex-start;
 }
 
+
+/* Avatar */
 .author-avatar {
     width: 56px;
     height: 56px;
+
     border-radius: 999px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background-color: #5d4766;
+
     font-size: 1.7rem;
+
+    flex-shrink: 0;
 }
 
+
+/* Author Info */
 .author-info {
     display: flex;
     flex-direction: column;
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    gap: 0.2rem;
 }
 
+
+/* Name */
 .author-name {
     font-weight: 700;
 }
 
+
+/* Role */
 .author-role {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
+
+
+/* =========================
+   Slick Slider
+   ========================= */
 
 .slick-dots {
     bottom: -40px !important;
@@ -1032,6 +1106,75 @@ nav {
     color: var(--primary-dark) !important;
     opacity: 1 !important;
 }
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .testimonial-card {
+        padding: 2rem 1.4rem;
+        min-height: 300px;
+    }
+
+    .testimonial-content {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .testimonial-rating {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+}
+
+
+
+/* =========================
+   Slick Slider
+   ========================= */
+
+.slick-dots {
+    bottom: -40px !important;
+}
+
+.slick-dots li button:before {
+    color: var(--primary-color) !important;
+    font-size: 10px !important;
+    opacity: 0.5 !important;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--primary-dark) !important;
+    opacity: 1 !important;
+}
+
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .testimonial-card {
+        padding: 2rem 1.4rem;
+        min-height: 300px;
+    }
+
+    .testimonial-content {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .testimonial-rating {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+}
+
+
 
 /* =========================
    Contact

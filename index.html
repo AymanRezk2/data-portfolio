@@ -20,7 +20,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%239D4EDD'/%3E%3Cstop offset='100%25' stop-color='%2300F5D4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='%231A1D24'/%3E%3Ctext x='50' y='68' font-family='Arial, sans-serif' font-size='52' font-weight='bold' fill='url(%23g)' text-anchor='middle'%3EAR%3C/text%3E%3C/svg%3E">
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="images/og-image.png">
-    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ayman Rezk — Data Analyst">
     <meta property="og:title" content="Ayman Rezk — Data Analyst Portfolio">
@@ -57,7 +57,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-<!-- Structured Data (JSON-LD) for SEO -->
+<!-- Structured Data (JSON-LD) for SEO — Person -->
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -67,6 +67,7 @@
         "url": "https://aymanrezk2.github.io/data-portfolio/",
         "image": "https://aymanrezk2.github.io/data-portfolio/images/og-image.png",
         "email": "aymanrizk83@gmail.com",
+        "telephone": "+201279496786",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Alexandria",
@@ -88,6 +89,21 @@
         ]
     }
     </script>
+<!-- Structured Data — ContactPage -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Ayman Rezk",
+        "url": "https://aymanrezk2.github.io/data-portfolio/#contact",
+        "mainEntity": {
+            "@type": "Person",
+            "name": "Ayman Rezk",
+            "email": "aymanrizk83@gmail.com",
+            "telephone": "+201279496786"
+        }
+    }
+    </script>
 </head>
 
 <body data-theme="dark">
@@ -101,15 +117,18 @@
         <div class="nav-container">
             <a href="#hero" class="logo" aria-label="Ayman Rezk Home">Ayman Rezk</a>
             <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#powerbi-projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#powerbi-projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
+                <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <span id="lang-label">AR</span>
+                </button>
                 <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
                     <i class="fas fa-moon" id="theme-icon"></i>
                 </button>
@@ -119,65 +138,55 @@
             </div>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#powerbi-projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#powerbi-projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
     </nav>
 
     <main>
         <!-- =========================
-                                                                                                                                                                        Hero Section
-                                                                                                                                                                ========================= -->
+             Hero Section (Simplified)
+             ========================= -->
         <section id="hero" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm Ayman Rezk.</h1>
-                <p class="hero-subtitle">
+                <h1 class="hero-title" data-i18n="hero.title">Hi, I'm Ayman Rezk.</h1>
+                <p class="hero-subtitle" data-i18n-html="hero.subtitle">
                     I turn messy business data into <span class="highlight-cyan">tools that actually work</span>
+                    — so every decision you make is backed by <span class="highlight-cyan">real data, not guesses</span>
                 </p>
-                <p class="hero-description">
+                <p class="hero-description" data-i18n-html="hero.description">
                     Data Analyst specializing in <strong>Power BI dashboards</strong> and
-                    <strong>custom business tools built with Google Apps Script & Google Sheets</strong>
-                    — from automating daily reports to building internal tools that save your team hours every week.
-                    <br><br>
-                    <strong>Every solution is tailored to your business</strong> — not a template, not a generic
-                    dashboard,
-                    but a tool designed around how <em>your</em> team actually works.
+                    <strong>custom business tools</strong> — every solution is tailored to your business,
+                    not a generic template.
                 </p>
                 <div class="cta-buttons">
-                    <a href="#powerbi-projects" class="btn btn-primary">
+                    <a href="#powerbi-projects" class="btn btn-primary" data-i18n="hero.ctaPrimary">
                         <i class="fas fa-chart-line"></i> See My Dashboards
                     </a>
-                    <a href="#contact" class="btn btn-secondary">
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.ctaSecondary">
                         <i class="fas fa-envelope"></i> Get In Touch
                     </a>
-                </div>
-                <div class="trust-badges">
-                    <span><i class="fas fa-check-circle"></i> 40+ Projects Delivered</span>
-                    <span><i class="fas fa-check-circle"></i> 10+ Happy Clients</span>
-                    <span><i class="fas fa-check-circle"></i> Top 1 DEPI Project</span>
-                    <span><i class="fas fa-check-circle"></i> 87% Automation Rate</span>
                 </div>
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                        Featured Work Section
-                                                                                                                                        ========================= -->
+             Featured Work Section
+             ========================= -->
         <section id="featured" class="section featured-section">
-            <h2 class="section-title">Featured Work</h2>
+            <h2 class="section-title" data-i18n="featured.title">Featured Work</h2>
             <div class="featured-card">
                 <div class="featured-image">
-                    <img src="images\NeuroWheel_cover.jpg" alt="NeuroWheel Brain-Computer Interface Project" loading="lazy">
+                    <img src="images/NeuroWheel_cover.jpg" alt="NeuroWheel Brain-Computer Interface Project" loading="lazy">
                 </div>
                 <div class="featured-content">
-                    <span class="featured-badge">🏆 Top 1 Project — DEPI</span>
-                    <h3>NeuroWheel — Brain-Controlled Wheelchair</h3>
-                    <p>
+                    <span class="featured-badge" data-i18n="featured.badge">🏆 Top 1 Project — DEPI</span>
+                    <h3 data-i18n="featured.heading">NeuroWheel — Brain-Controlled Wheelchair</h3>
+                    <p data-i18n-html="featured.description">
                         Built a Brain-Computer Interface (BCI) system using <strong>EEG signals + Deep Learning</strong>
                         that achieved <strong>90% accuracy</strong> in detecting brain signal patterns. Ranked
                         <strong>#1 in company track</strong> and received a monetary award.
@@ -190,7 +199,7 @@
                         <span>Deep Learning</span>
                     </div>
                     <a href="https://github.com/AymanRezk2/BCI-Intent-Detection" target="_blank" rel="noopener"
-                        class="btn btn-primary">
+                        class="btn btn-primary" data-i18n="featured.cta">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
@@ -198,69 +207,65 @@
         </section>
         
         <!-- =========================
-                                                                                                                                        About Section
-                                                                                                                                        ========================= -->
+             About Section
+             ========================= -->
         <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-image">
                     <img src="images/me.jpeg" alt="Ayman Rezk — Data Analyst" class="profile-image" loading="lazy">
                 </div>
                 <div class="about-text">
-                    <p>
+                    <p data-i18n="about.p1">
                         I'm Ayman Rezk, a data analyst who transforms messy, scattered data into actionable insights.
                         I focus on uncovering hidden opportunities, clarifying risks, and delivering insights that truly
                         impact business decisions.
-                        </p>
-                        <p>
+                    </p>
+                    <p data-i18n="about.p2">
                         I've worked across end-to-end analytics: cleaning data, exploring patterns, building dashboards,
                         and creating clear stories that non-technical stakeholders can trust and act upon.
-                        </p>
-                        <p>
+                    </p>
+                    <p data-i18n="about.p3">
                         My work isn't just about numbers — it's about honesty, accuracy, and delivering value I'm proud
-                        of
-                        before it reaches the client. I enjoy explaining challenges clearly, thinking through solutions,
-                        and collaborating to achieve measurable results.
+                        of before it reaches the client.
                         </p>
                 </div>
             </div>
-            <!-- Real Stats from CV -->
             <div class="stats-container">
                 <div class="stat-card">
                     <div class="stat-number">2.5+</div>
-                    <div class="stat-label">Years in Data Analytics</div>
+                    <div class="stat-label" data-i18n="stats.years">Years in Data Analytics</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">15+</div>
-                        <div class="stat-label">Happy Clients</div>
+                    <div class="stat-label" data-i18n="stats.clients">Happy Clients</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">40+</div>
-                    <div class="stat-label">Dashboards & Analyses</div>
+                    <div class="stat-label" data-i18n="stats.projects">Dashboards & Analyses</div>
                     </div>
                     <div class="stat-card">
                     <div class="stat-number">66</div>
-                    <div class="stat-label">Students Mentored</div>
+                    <div class="stat-label" data-i18n="stats.students">Students Mentored</div>
                     </div>
                     <div class="stat-card">
                     <div class="stat-number">87%</div>
-                    <div class="stat-label">Manual Work Reduced</div>
+                    <div class="stat-label" data-i18n="stats.automation">Manual Work Reduced</div>
                     </div>
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                        Services Section
-                                                                                                                                        ========================= -->
+             Services Section
+             ========================= -->
         <section id="services" class="section">
-            <h2 class="section-title">Services I Offer</h2>
+            <h2 class="section-title" data-i18n="services.title">Services I Offer</h2>
 
             <div class="services-grid">
-                <!-- 1. Power BI & Excel Dashboards -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3 class="service-title">Power BI & Excel Dashboards</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-i18n="services.s1.title">Power BI & Excel Dashboards</h3>
+                    <p class="service-description" data-i18n-html="services.s1.desc">
                         Interactive dashboards that turn your raw data into clear KPIs and visual insights —
                         built in <strong>Power BI</strong> or <strong>Excel</strong>, designed around
                         <strong>your business questions</strong>, not generic templates.
@@ -268,23 +273,21 @@
                         <span class="service-highlight">Delivered in 3–7 days</span>
                     </p>
                 </div>
-                <!-- 2. End-to-End Data Analysis -->
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-database"></i></div>
-                    <h3 class="service-title">End-to-End Data Analysis</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-i18n="services.s2.title">End-to-End Data Analysis</h3>
+                    <p class="service-description" data-i18n-html="services.s2.desc">
                         Full analytics pipeline — from <strong>data cleaning & preprocessing</strong>,
                         through <strong>exploratory analysis (EDA)</strong>, to a final
                         <strong>report with actionable recommendations</strong> your team can act on.
                         <br><br>
                         <span class="service-highlight">Clean data + insights + next steps</span>
-                        </p>
-                        </div>
-                <!-- 3. Google Sheets & Apps Script -->
+                    </p>
+                    </div>
                 <div class="service-card">
                     <div class="service-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="service-title">Google Sheets & Apps Script</h3>
-                    <p class="service-description">
+                    <h3 class="service-title" data-i18n="services.s3.title">Google Sheets & Apps Script</h3>
+                    <p class="service-description" data-i18n-html="services.s3.desc">
                         Custom <strong>business tools built inside Google Workspace</strong> —
                         automated reports, data entry forms, approval workflows, notifications,
                         and any internal tool your team needs.
@@ -292,46 +295,47 @@
                         <span class="service-highlight">Built around how your team works</span>
                     </p>
                 </div>
-                </div>
-                </section>
+            </div>
+            </section>
 
         <!-- =========================
-                                                                                                                                            How I Work (Process)
-                                                                                                                                            ========================= -->
+             How I Work (Process)
+             ========================= -->
         <section id="process" class="section">
-            <h2 class="section-title">How I Work</h2>
+            <h2 class="section-title" data-i18n="process.title">How I Work</h2>
             <div class="process-grid">
                 <div class="process-step">
                     <span class="step-number">01</span>
-                    <h3>Discovery Call</h3>
-                    <p>Understand your business, your data, and the decisions you actually need to make.</p>
+                    <h3 data-i18n="process.s1.title">Discovery Call</h3>
+                    <p data-i18n="process.s1.desc">Understand your business, your data, and the decisions you actually need to make.</p>
                 </div>
                 <div class="process-step">
                     <span class="step-number">02</span>
-                    <h3>Data Audit</h3>
-                    <p>Clean, validate, and structure your data — or tell you honestly if it's not ready yet.</p>
+                    <h3 data-i18n="process.s2.title">Data Audit</h3>
+                    <p data-i18n="process.s2.desc">Clean, validate, and structure your data — or tell you honestly if it's not ready yet.
+                    </p>
                 </div>
                 <div class="process-step">
                     <span class="step-number">03</span>
-                    <h3>Analysis & Build</h3>
-                    <p>Build dashboards, models, or automation with clear checkpoints at every stage.</p>
+                    <h3 data-i18n="process.s3.title">Analysis & Build</h3>
+                    <p data-i18n="process.s3.desc">Build dashboards, models, or automation with clear checkpoints at every stage.</p>
                 </div>
                 <div class="process-step">
                     <span class="step-number">04</span>
-                    <h3>Delivery & Handoff</h3>
-                    <p>You get the deliverable + a walkthrough session + documentation you can keep.</p>
+                    <h3 data-i18n="process.s4.title">Delivery & Handoff</h3>
+                    <p data-i18n="process.s4.desc">You get the deliverable + a walkthrough session + documentation you can keep.</p>
                 </div>
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                            Skills Section
-                                                                                                                                            ========================= -->
+             Skills Section
+             ========================= -->
         <section id="skills" class="section">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title" data-i18n="skills.title">My Skills</h2>
 
             <div class="skills-category">
-                <h3 class="skills-category-title">Programming Languages</h3>
+                <h3 class="skills-category-title" data-i18n="skills.cat1">Programming Languages</h3>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <i class="fab fa-python skill-icon"></i>
@@ -344,8 +348,8 @@
                     <div class="skill-card">
                         <i class="fas fa-code skill-icon"></i>
                         <span class="skill-name">Apps Script (JS)</span>
-                        </div>
-                        <div class="skill-card">
+                    </div>
+                    <div class="skill-card">
                         <i class="fab fa-r-project skill-icon"></i>
                         <span class="skill-name">R (basic)</span>
                     </div>
@@ -353,7 +357,7 @@
             </div>
 
             <div class="skills-category">
-                <h3 class="skills-category-title">Libraries & Frameworks</h3>
+                <h3 class="skills-category-title" data-i18n="skills.cat2">Libraries & Frameworks</h3>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <i class="fas fa-robot skill-icon"></i>
@@ -375,7 +379,7 @@
             </div>
 
             <div class="skills-category">
-                <h3 class="skills-category-title">Tools & Platforms</h3>
+                <h3 class="skills-category-title" data-i18n="skills.cat3">Tools & Platforms</h3>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <i class="fas fa-chart-line skill-icon"></i>
@@ -401,132 +405,132 @@
             </div>
 
             <div class="skills-category">
-                <h3 class="skills-category-title">Communication & Business Skills</h3>
+                <h3 class="skills-category-title" data-i18n="skills.cat4">Communication & Business Skills</h3>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <i class="fas fa-chalkboard-teacher skill-icon"></i>
-                        <span class="skill-name">Presentation & Storytelling</span>
+                        <span class="skill-name" data-i18n="skills.presentation">Presentation & Storytelling</span>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-lightbulb skill-icon"></i>
-                        <span class="skill-name">Problem Solving</span>
+                        <span class="skill-name" data-i18n="skills.problem">Problem Solving</span>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-search-dollar skill-icon"></i>
-                        <span class="skill-name">Opportunity Analysis</span>
+                        <span class="skill-name" data-i18n="skills.opportunity">Opportunity Analysis</span>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-users skill-icon"></i>
-                        <span class="skill-name">Collaboration & Teamwork</span>
+                        <span class="skill-name" data-i18n="skills.collab">Collaboration & Teamwork</span>
                     </div>
                     <div class="skill-card">
                         <i class="fas fa-balance-scale skill-icon"></i>
-                        <span class="skill-name">Decision Support</span>
+                        <span class="skill-name" data-i18n="skills.decision">Decision Support</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- =========================
-                                                                            Certifications Section
-                                                                            ========================= -->
+             Certifications Section
+             ========================= -->
         <section id="certifications" class="section">
-            <h2 class="section-title">Certifications & Awards</h2>
+            <h2 class="section-title" data-i18n="certs.title">Certifications & Awards</h2>
             <div class="certs-grid">
         
                 <a href="assets/Certificates/DEPI.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-trophy"></i></div>
-                    <h4>Top 1 Project — DEPI</h4>
-                    <p>Microsoft AI & Data Science Track</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c1.title">Top 1 Project — DEPI</h4>
+                    <p data-i18n="certs.c1.desc">Microsoft AI & Data Science Track</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/1_gooel.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-brain"></i></div>
-                    <h4>Data — Google</h4>
-                    <p>Foundations: Data, Data, Everywhere</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c2.title">Data — Google</h4>
+                    <p data-i18n="certs.c2.desc">Foundations: Data, Data, Everywhere</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/NTI.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
-                    <h4>Data Analysis — NTI</h4>
-                    <p>National Telecommunication Institute</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c3.title">Data Analysis — NTI</h4>
+                    <p data-i18n="certs.c3.desc">National Telecommunication Institute</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/MIAM.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-database"></i></div>
-                    <h4>Data Science — MAIM</h4>
-                    <p>Graduated 70/70</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c4.title">Data Science — MAIM</h4>
+                    <p data-i18n="certs.c4.desc">Graduated 70/70</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/sql_basic certificate.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h4>SQL Basic</h4>
-                    <p>HackerRank Certification</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c5.title">SQL Basic</h4>
+                    <p data-i18n="certs.c5.desc">HackerRank Certification</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/Intro_SQL.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-code"></i></div>
-                    <h4>Introduction to SQL</h4>
-                    <p>DataCamp / Online Course</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c6.title">Introduction to SQL</h4>
+                    <p data-i18n="certs.c6.desc">DataCamp / Online Course</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/Freelancing from Scratch.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
-                    <h4>Freelancing from Scratch</h4>
-                    <p>fostering the skills of Freelancing Basics</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c7.title">Freelancing from Scratch</h4>
+                    <p data-i18n="certs.c7.desc">Freelancing Basics</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/Freelancing Intermediate.pdf" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
-                    <h4>Freelancing Intermediate</h4>
-                    <p>fostering the skills of Freelance Business Model</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c8.title">Freelancing Intermediate</h4>
+                    <p data-i18n="certs.c8.desc">Freelance Business Model</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
                 <a href="assets/Certificates/ITIDA Gigs.jpg" target="_blank" rel="noopener" class="cert-card">
                     <div class="cert-icon"><i class="fas fa-award"></i></div>
-                    <h4>ITIDA Gigs</h4>
-                    <p>3 months freelance training program</p>
-                    <span class="cert-link">View Certificate <i class="fas fa-external-link-alt"></i></span>
+                    <h4 data-i18n="certs.c9.title">ITIDA Gigs</h4>
+                    <p data-i18n="certs.c9.desc">3-month freelance training program</p>
+                    <span class="cert-link" data-i18n="certs.view">View Certificate <i class="fas fa-external-link-alt"></i></span>
                 </a>
         
             </div>
         </section>
         
         <!-- =========================
-                                                                                                                                            Learning Section
-                                                                                                                                            ========================= -->
+             Learning Section
+             ========================= -->
         <section id="learning" class="section">
-            <h2 class="section-title">What I'm Learning</h2>
+            <h2 class="section-title" data-i18n="learning.title">What I'm Learning</h2>
             <div class="learning-grid">
                 <div class="learning-card">
                     <div class="learning-icon"><i class="fas fa-chart-line"></i></div>
                     <div class="learning-info">
-                        <h3>Advanced Data Storytelling</h3>
-                        <p>Sharpening how I frame findings for leadership — using visuals, context, and narrative
+                        <h3 data-i18n="learning.l1.title">Advanced Data Storytelling</h3>
+                        <p data-i18n="learning.l1.desc">Sharpening how I frame findings for leadership — using visuals, context, and narrative
                             structure to move from "what happened" to "what we should do next".</p>
                     </div>
                 </div>
                 <div class="learning-card">
                     <div class="learning-icon"><i class="fas fa-database"></i></div>
                     <div class="learning-info">
-                        <h3>SQL & Data Warehousing</h3>
-                        <p>Deepening expertise in writing efficient SQL, working with relational models, and connecting
-                            analytical workflows to production-grade data sources.</p>
+                        <h3 data-i18n="learning.l2.title">SQL & Data Warehousing</h3>
+                        <p data-i18n="learning.l2.desc">Deepening expertise in writing efficient SQL, working with relational models, and
+                            connecting analytical workflows to production-grade data sources.</p>
                     </div>
                 </div>
                 <div class="learning-card">
                     <div class="learning-icon"><i class="fas fa-cogs"></i></div>
                     <div class="learning-info">
-                        <h3>Advanced Apps Script</h3>
-                        <p>Building more complex Google Workspace automations — connecting Sheets, Gmail, Calendar,
+                        <h3 data-i18n="learning.l3.title">Advanced Apps Script</h3>
+                        <p data-i18n="learning.l3.desc">Building more complex Google Workspace automations — connecting Sheets, Gmail, Calendar,
                             Drive, and external APIs into seamless workflows.</p>
                         </div>
                         </div>
@@ -534,149 +538,116 @@
                         </section>
 
         <!-- =========================
-                                                                                                                                            Experience Section
-                                                                                                                                            ========================= -->
+             Experience Section
+             ========================= -->
         <section id="experience" class="section">
-            <h2 class="section-title">Experience & Education</h2>
+            <h2 class="section-title" data-i18n="exp.title">Experience & Education</h2>
             <div class="timeline">
-                <!-- Freelance Data Analyst -->
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <h3>Freelance Data Analyst</h3>
+                        <h3 data-i18n="exp.e1.title">Freelance Data Analyst</h3>
                         <p>Freelancer · Freelance</p>
-                        <span>Jun 2024 – Present · 2 yrs 5 mos · Remote</span>
-                        <p>
-                            • Delivered <strong>5+ data analysis projects</strong> for small businesses using Python,
-                            Power BI, and Excel.<br>
-                            • Built <strong>interactive Power BI dashboards</strong> to track KPIs and support business
-                            decisions.<br>
-                            • <strong>Automated data reporting processes</strong>, reducing manual effort by up to
-                            <strong>70%</strong>.<br>
-                            • Performed exploratory data analysis (EDA) to identify trends and actionable insights.
+                        <span>Jun 2024 – Present · Remote</span>
+                        <p data-i18n-html="exp.e1.desc">
+                            • Delivered <strong>25+ data analysis projects</strong> for small businesses using Python, Power BI, and Excel.<br>
+                            • Built <strong>interactive Power BI dashboards</strong> to track KPIs and support business decisions.<br>
+                            • <strong>Automated data reporting processes</strong>, reducing manual effort by up to <strong>70%</strong>.
+                        </p>
+                    </div>
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    </div>
+<div class="timeline-item">
+    <div class="timeline-item-content">
+                        <h3 data-i18n="exp.e2.title">Freelance Data Analysis Coach</h3>
+                        <p>Freelance Yard · Freelance</p>
+                        <span>Apr 2026 – Aug 2026 · Remote</span>
+                        <p data-i18n-html="exp.e2.desc">
+                            Mentored a cohort of <strong>66 students</strong> on starting and growing in the data analysis freelancing industry
+                            — covering portfolio building, market-ready skills, and client communication.
                         </p>
                         </div>
-                        <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         </div>
-                        <!-- Freelance Yard - Coach -->
-                        <div class="timeline-item">
-                            <div class="timeline-item-content">
-                                <h3>Freelance Data Analysis Coach</h3>
-                                <p>Freelance Yard · Freelance</p>
-                                <span>Apr 2026 – Aug 2026 · 5 mos · Remote</span>
-                                <p>
-                                    Mentored a cohort of <strong>66 students</strong> on starting and growing in the data
-                                    analysis
-                                    freelancing industry. Delivered practical guidance on portfolio building, market-ready
-                                    skills,
-                                    project execution, and client communication using Power BI, Excel, SQL, and Python.
-                                </p>
-                            </div>
-                            <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                            </div>
-                        <!-- GBE - Payroll Analyst -->
-                        <div class="timeline-item">
-                            <div class="timeline-item-content">
-                                <h3>Payroll Analyst Intern</h3>
-                                <p>GBE · Internship</p>
-                                <span>Apr 2026 · 1 mo · Alexandria, Egypt · On-site</span>
-                        <p>
-                            • Gained understanding of Payroll fundamentals in logistics and key KPIs (accuracy,
-                            processing time,
-                            compliance).<br>
-                            • <strong>Automated an Excel-based payroll review process using Python</strong>, reducing
-                            processing time
-                            from
-                            <strong>15 min → 2 min (~87% improvement)</strong>.
+<div class="timeline-item">
+    <div class="timeline-item-content">
+                        <h3 data-i18n="exp.e3.title">Payroll Analyst Intern</h3>
+                        <p>GBE · Internship</p>
+                        <span>Apr 2026 · Alexandria, Egypt</span>
+                        <p data-i18n-html="exp.e3.desc">
+                            • Gained understanding of Payroll fundamentals and key KPIs.<br>
+                            • <strong>Automated an Excel-based payroll review process</strong>, reducing processing time from <strong>15 min → 2
+                                min (~87%)</strong>.
                         </p>
                     </div>
                     <div class="timeline-icon"><i class="fas fa-calculator"></i></div>
                 </div>
 
-                <!-- NTI -->
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <h3>Data Analyst Intern</h3>
-                        <p>National Telecommunication Institute (NTI) · Internship</p>
-                        <span>Oct 2025 – Dec 2025 · 3 mos · On-site</span>
-                        <p>
-                            • Completed a hands-on Data Analysis training program focused on real-world applications and
-                            business-driven
-                            insights.<br>
-                            • Gained practical experience in <strong>data cleaning, EDA, visualization, and statistical
-                                techniques</strong> for
-                            decision-making.<br>
-                            • Worked extensively with <strong>Excel, SQL, and Power BI</strong> to prepare datasets,
-                            build dashboards, and
-                            extract actionable insights.<br>
-                            • Learned to identify and communicate the <strong>Unique Selling Proposition (USP)</strong>
-                            of projects to
-                            stakeholders.
+                        <h3 data-i18n="exp.e4.title">Data Analyst Intern</h3>
+                        <p>National Telecommunication Institute (NTI)</p>
+                        <span>Oct 2025 – Dec 2025</span>
+                        <p data-i18n-html="exp.e4.desc">
+                            • Hands-on Data Analysis training focused on real-world applications.<br>
+                            • Worked extensively with <strong>Excel, SQL, and Power BI</strong> to build dashboards and extract actionable
+                            insights.
                         </p>
                     </div>
                     <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-                    </div>
+                </div>
 
-                <!-- DEPI - Microsoft -->
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <h3>Microsoft AI & Data Science Trainee</h3>
-                        <p>Digital Egypt Pioneers Initiative (DEPI) · Internship</p>
-                        <span>Jun 2025 – Dec 2025 · 7 mos · Alexandria, Egypt · Hybrid</span>
-                        <p>
-                            • Built a Brain-Computer Interface (BCI) project "NeuroWheel" using EEG signals and ML/DL
-                            models.<br>
-                            • Applied classification models to detect brain signal patterns with <strong>90%
+                        <h3 data-i18n="exp.e5.title">Microsoft AI & Data Science Trainee</h3>
+                        <p>Digital Egypt Pioneers Initiative (DEPI)</p>
+                        <span>Jun 2025 – Dec 2025</span>
+                        <p data-i18n-html="exp.e5.desc">
+                            • Built a Brain-Computer Interface (BCI) project "NeuroWheel" using EEG signals + Deep Learning with <strong>90%
                                 accuracy</strong>.<br>
-                            • Processed and analyzed EEG datasets using <strong>Python (NumPy, Pandas, Scikit-learn,
-                                TensorFlow)</strong>.<br>
                             • <strong>Ranked Top 1 project</strong> in the company track and received a monetary award.
                         </p>
                     </div>
                     <div class="timeline-icon"><i class="fas fa-brain"></i></div>
-                    </div>
+                </div>
 
-                <!-- Education -->
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <h3>B.Sc. in Data Science</h3>
+                        <h3 data-i18n="exp.e6.title">B.Sc. in Data Science</h3>
                         <p>Faculty of Computers and Data Science, Alexandria University</p>
                         <span>Sep 2022 – Jun 2026</span>
-                        <p>
-                            Specialized in data science, statistics, and machine learning — combining theory with
-                            practical analytics projects.
+                        <p data-i18n="exp.e6.desc">
+                            Specialized in data science, statistics, and machine learning — combining theory with practical analytics projects.
                         </p>
                     </div>
                     <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                    </div>
-                    </div>
+                </div>
+                </div>
 
             <div class="resume-download-btn">
-                <a href="assets/AymanRezkCV.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+                <a href="assets/AymanRezkCV.pdf" class="btn btn-primary" target="_blank" rel="noopener" data-i18n="exp.resume">
                     <i class="fas fa-download"></i> Download Resume
                 </a>
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                            Power BI Projects Section
-                                                                                                                                            ========================= -->
+             Power BI Projects Section
+             ========================= -->
         <section id="powerbi-projects" class="section animate-on-scroll">
-            <h2 class="section-title">Power BI Dashboards</h2>
+            <h2 class="section-title" data-i18n="proj.title">Power BI Dashboards</h2>
             <div class="projects-grid">
                 <div class="project-card image-card">
                     <div class="project-image">
                         <img src="assets/PowerBI/3/Screenshot 2025-12-02 115842.png" alt="Project Health Scorecard dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Project Health Scorecard</h3>
-                        <p class="project-description">
-                            Built a Power BI dashboard to evaluate project health in Nigeria, tracking status, managers,
-                            budgets, and expenses. Enabled stakeholders to quickly identify projects needing attention,
-                            monitor top-performing types, and understand cost trends for informed decision-making.
+                        <h3 class="project-title" data-i18n="proj.p1.title">Project Health Scorecard</h3>
+                        <p class="project-description" data-i18n="proj.p1.desc">
+                            Built a Power BI dashboard to evaluate project health in Nigeria, tracking status, managers, budgets, and expenses.
                         </p>
                         <div class="project-links">
                             <a href="assets/PowerBI/3/33.pbix" class="project-link" target="_blank" rel="noopener">
-                                <i class="fas fa-download"></i> Download PBIX
+                                <i class="fas fa-download"></i> PBIX
                             </a>
                         </div>
                     </div>
@@ -687,17 +658,14 @@
                         <img src="assets/Sample - Superstore_Excel/summary.png" alt="Superstore Excel dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Superstore Performance Excel</h3>
-                        <p class="project-description">
-                            Built an Excel dashboard to analyze Superstore performance across sales, profit,
-                            geography, customer segments, and product categories. Delivered insights on high-value
-                            markets, top-performing products, customer distribution, and operational trends to support
-                            data-driven expansion decisions.
+                        <h3 class="project-title" data-i18n="proj.p2.title">Superstore Performance Excel</h3>
+                        <p class="project-description" data-i18n="proj.p2.desc">
+                            Built an Excel dashboard to analyze Superstore performance across sales, profit, geography, and customer segments.
                         </p>
                         <div class="project-links">
                             <a href="assets/Sample - Superstore_Excel/Dashboard/Sample - Superstore_2.xlsx" class="project-link" target="_blank"
                                 rel="noopener">
-                                <i class="fas fa-download"></i> Download Excel
+                                <i class="fas fa-download"></i> Excel
                             </a>
                         </div>
                     </div>
@@ -708,16 +676,14 @@
                         <img src="assets/PowerBI/Supermarket Sales/Screenshot.png" alt="Supermarket Sales Dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Supermarket Sales Dashboard</h3>
-                        <p class="project-description">
-                            Built a Power BI dashboard to analyze 3 months of supermarket sales across 3 branches,
-                            tracking transactions, customer segments, payment methods, and time patterns. Provided
-                            actionable insights on top-performing products, peak sales hours, and customer loyalty
-                            clusters to guide promotions and operational decisions.
+                        <h3 class="project-title" data-i18n="proj.p3.title">Supermarket Sales Dashboard</h3>
+                        <p class="project-description" data-i18n="proj.p3.desc">
+                            Built a Power BI dashboard analyzing 3 months of sales across 3 branches, tracking transactions, customer segments,
+                            and time patterns.
                         </p>
                         <div class="project-links">
                             <a href="assets/PowerBI/Supermarket Sales/Supermarket Sales.pbix" class="project-link" target="_blank" rel="noopener">
-                                <i class="fas fa-download"></i> Download PBIX
+                                <i class="fas fa-download"></i> PBIX
                             </a>
                         </div>
                     </div>
@@ -728,86 +694,77 @@
                         <img src="assets/PowerBI/Parfiam_Noon/Screenshot.png" alt="Perfume Sales Dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Perfume Sales Dashboard</h3>
-                        <p class="project-description">
-                            Built a Power BI dashboard to analyze pricing, categories, brands, ratings, and discount
-                            impact, helping stakeholders quickly identify high-margin products and underperforming
-                            segments.
-                            </p>
-                            <div class="project-links">
+                        <h3 class="project-title" data-i18n="proj.p4.title">Perfume Sales Dashboard</h3>
+                        <p class="project-description" data-i18n="proj.p4.desc">
+                            Built a Power BI dashboard analyzing pricing, categories, brands, and discount impact.
+                        </p>
+                        <div class="project-links">
                             <a href="assets/PowerBI/Parfiam_Noon/Perfume_Sales_Dashboard.pbix" class="project-link" target="_blank" rel="noopener">
-                                <i class="fas fa-download"></i> Download PBIX
+                                <i class="fas fa-download"></i> PBIX
                             </a>
-                            </div>
-                            </div>
-                            </div>
+                        </div>
+                        </div>
+                        </div>
 
                 <div class="project-card image-card">
                     <div class="project-image">
                         <img src="assets/project_GPT_1/Screenshot.png" alt="Sales Overview Dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Sales Overview Dashboard</h3>
-                        <p class="project-description">
-                            Designed an executive sales overview that consolidates KPIs, regional performance, product
-                            contribution, and month-over-month trends to support revenue tracking and planning.
+                        <h3 class="project-title" data-i18n="proj.p5.title">Sales Overview Dashboard</h3>
+                        <p class="project-description" data-i18n="proj.p5.desc">
+                            Designed an executive sales overview consolidating KPIs, regional performance, and month-over-month trends.
                         </p>
                         <div class="project-links">
                             <a href="assets/project_GPT_1/Sales_Overview_Dashboard.pbix" class="project-link" target="_blank" rel="noopener">
-                                <i class="fas fa-download"></i> Download PBIX
+                                <i class="fas fa-download"></i> PBIX
                             </a>
                         </div>
                     </div>
-                    </div>
+                </div>
 
                 <div class="project-card image-card">
                     <div class="project-image">
                         <img src="assets/PowerBI/Final_DVIS/Screenshot.png" alt="Financial Sales Overview dashboard" loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Financial Sales Overview</h3>
-                        <p class="project-description">
-                            Created a financial performance dashboard covering sales, profit, customer segments, product
-                            performance, yearly trends, and geographic breakdowns for faster performance review.
+                        <h3 class="project-title" data-i18n="proj.p6.title">Financial Sales Overview</h3>
+                        <p class="project-description" data-i18n="proj.p6.desc">
+                            Created a financial performance dashboard covering sales, profit, customer segments, and yearly trends.
                         </p>
                         <div class="project-links">
                             <a href="assets/PowerBI/Final_DVIS/Financial_Sales_Overview.pbix" class="project-link" target="_blank" rel="noopener">
-                                <i class="fas fa-download"></i> Download PBIX
+                                <i class="fas fa-download"></i> PBIX
                             </a>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                            Projects Section (GitHub)
-                                                                                                                                            ========================= -->
+             Projects Section (GitHub)
+             ========================= -->
         <section id="projects" class="section animate-on-scroll">
-            <h2 class="section-title">Featured Coding Projects</h2>
+            <h2 class="section-title" data-i18n="github.title">Featured Coding Projects</h2>
             <div class="projects-grid" id="github-projects-grid">
                 <!-- Projects loaded dynamically via JavaScript -->
             </div>
         </section>
 
         <!-- =========================
-                                                                                                                                            Testimonials Section
-                                                                                                                                            ========================= -->
+            Testimonials Section
+            ========================= -->
         <section id="testimonials" class="section">
-            <h2 class="section-title">Client Testimonials</h2>
+            <h2 class="section-title" data-i18n="testi.title">Client Testimonials</h2>
 
             <div class="testimonials-container">
+                <!-- Maryam -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "ألف شكر على سرعة تحضير المشروع ودقة العمل، مبدع جدًا وعمله احترافي وفاهم جدًا. خطير وفنان،
-                            تستاهل ألف نجمة."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"Thanks for the fast delivery and precise work — professional and talented. You deserve
-                                a thousand stars."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="1"></p>
+                        <p class="testimonial-translation" data-testi-trans="1"></p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👩🏻</span>
@@ -818,36 +775,28 @@
                     </div>
                 </div>
 
+                <!-- Eissa -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "أيمن ما شاء الله عليك، قدرت تحول البيانات إلى لوحة واضحة واحترافية. هذا هو الشغل اللي نعتمد
-                            عليه. استمر يا مبدع."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"Ayman, you turned the data into a clear, professional dashboard — exactly what we rely
-                                on. Keep it up."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="2"></p>
+                        <p class="testimonial-translation" data-testi-trans="2"></p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👨🏻</span>
                         <div class="author-info">
                             <span class="author-name">Eissa A.</span>
                             <span class="author-role">Khamsat Client</span>
-                            </div>
-                            </div>
-                            </div>
+                        </div>
+                        </div>
+                        </div>
 
+                <!-- Noor -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "ما شاء الله سرعة وفهم، وكل حاجة كانت مثالية وفوقها شكرا مرة."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"Fast and understanding — everything was perfect, and then some. Thanks again."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="3"></p>
+                        <p class="testimonial-translation" data-testi-trans="3"></p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👩🏻</span>
@@ -855,18 +804,15 @@
                             <span class="author-name">Noor M.</span>
                             <span class="author-role">Khamsat Client</span>
                         </div>
-                        </div>
-                        </div>
+                    </div>
+                    </div>
 
+                <!-- Ammar -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "عمل احترافي وفي وقت قياسي."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"Professional work delivered in record time."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="4"></p>
+                        <p class="testimonial-translation" data-testi-trans="4"></p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👨🏻</span>
@@ -877,18 +823,12 @@
                     </div>
                 </div>
 
+                <!-- Bishoy -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "أستاذ أيمن أنت إنسان خلوق ومهتم بعملك. مرن في التعديلات ويسمع لطلبات العميل ولا يمل، كما
-                            أنه يقترح أفكار مفيدة."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"A respectful professional who cares about his work — flexible with revisions, listens
-                                to client requests, and
-                                suggests useful ideas."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="5"></p>
+                        <p class="testimonial-translation" data-testi-trans="5"></p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👨🏻</span>
@@ -896,20 +836,15 @@
                             <span class="author-name">Bishoy Y.</span>
                             <span class="author-role">Khamsat Client</span>
                         </div>
-                        </div>
-                        </div>
+                    </div>
+                    </div>
 
+                <!-- Riyad -->
                 <div class="testimonial-card">
                     <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
                     <div class="testimonial-content">
-                        <p class="testimonial-original">
-                            "إنسان رائع وسريع بالتعامل، وإن شاء الله هذه ليست آخر مرة أتعامل معه. أنصح الجميع يجرب
-                            وماراح يندم إن شاء الله."
-                        </p>
-                        <p class="testimonial-translation">
-                            <em>"A great and fast professional — this won't be our last time working together. I
-                                recommend everyone tries."</em>
-                        </p>
+                        <p class="testimonial-original" data-testi="6"></p>
+                        <p class="testimonial-translation" data-testi-trans="6"></p>
                         </div>
                     <div class="testimonial-author">
                         <span class="author-avatar" aria-hidden="true">👨🏻‍🦱</span>
@@ -923,24 +858,54 @@
         </section>
 
         <!-- =========================
-                                                                                                                                            Contact Section
-                                                                                                                                            ========================= -->
+             Contact + Final CTA (Merged)
+             ========================= -->
         <section id="contact" class="section animate-on-scroll">
-            <h2 class="section-title">Get in Touch</h2>
-            <div class="contact-content single-column">
-                <div class="contact-info">
-                    <h3>Let's Turn Your Data into Decisions</h3>
-                    <p>Have a dataset, a reporting challenge, or a business question you want to explore?<br>
-                        Share the context, and I'll help you uncover the story behind the numbers.</p>
-                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <strong>Email:</strong>
+            <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
+            
+            <div class="contact-merged">
+                <div class="contact-main">
+                    <h3 data-i18n="contact.heading">Ready to Turn Your Data into Decisions?</h3>
+                    <p data-i18n-html="contact.desc">
+                        Have a dataset, a reporting challenge, or a business question you want to explore?
+                        Share the context, and I'll help you uncover the story behind the numbers —
+                        <strong>tailored to your business</strong>.
+                    </p>
+            
+                    <div class="contact-cta-buttons">
+                        <a href="https://wa.me/201279496786?text=Hi%20Ayman%2C%20I%27d%20like%20to%20discuss%20a%20data%20project"
+                            target="_blank" rel="noopener" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-i18n="contact.whatsapp">Chat on WhatsApp</span>
+                        </a>
+                        <a href="mailto:aymanrizk83@gmail.com" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            <span data-i18n="contact.email">Send Email</span>
+                        </a>
+                    </div>
+            
+                    <p class="contact-promise" data-i18n="contact.promise">
+                        ✓ Free 15-min consultation · ✓ Response within 2 hours
+                    </p>
+            
+                    <div class="contact-details">
+                        <p>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <strong data-i18n="contact.emailLabel">Email:</strong>
                             <a href="mailto:aymanrizk83@gmail.com">aymanrizk83@gmail.com</a>
-                    </p>
-                    <p><i class="fas fa-phone" aria-hidden="true"></i> <strong>Phone:</strong>
-                        <a href="tel:+201279496786">+20 127 949 6786</a>
-                    </p>
-                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <strong>Location:</strong> Alexandria
-                        Governorate, Egypt
-                    </p>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            <strong data-i18n="contact.phoneLabel">Phone:</strong>
+                            <a href="tel:+201279496786">+20 127 949 6786</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <strong data-i18n="contact.locationLabel">Location:</strong>
+                            <span data-i18n="contact.location">Alexandria, Egypt</span>
+                        </p>
+                    </div>
+
                     <div class="social-links">
                         <a href="https://github.com/AymanRezk2" target="_blank" class="social-link" aria-label="GitHub" rel="noopener">
                             <i class="fab fa-github"></i>
@@ -957,27 +922,32 @@
                 </div>
             </div>
         </section>
-        </main>
-        
-        <!-- =========================
-                                                                                                                                            Footer
-                                                                                                                                            ========================= -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#hero" class="logo">Ayman Rezk</a>
-                    <p>Turning business data into tools that work.</p>
+    </main>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201279496786?text=Hi%20Ayman%2C%20I%27d%20like%20to%20discuss%20a%20data%20project"
+        class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact me on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip" data-i18n="whatsapp.tooltip">Chat with me</span>
+    </a>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#hero" class="logo">Ayman Rezk</a>
+                <p data-i18n="footer.tagline">Turning business data into tools that work.</p>
                 </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#powerbi-projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+                <a href="#about" data-i18n="nav.about">About</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#powerbi-projects" data-i18n="nav.projects">Projects</a>
+                <a href="#experience" data-i18n="nav.experience">Experience</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="footer-social">
-                <h4>Connect</h4>
+                <h4 data-i18n="footer.connect">Connect</h4>
                 <a href="https://github.com/AymanRezk2" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> GitHub
                 </a>
@@ -988,21 +958,19 @@
                     <i class="fab fa-tiktok"></i> TikTok
                 </a>
             </div>
-            </div>
+        </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="current-year"></span> Ayman Rezk. All rights reserved.</p>
+            <p>&copy; <span id="current-year"></span> Ayman Rezk. <span data-i18n="footer.rights">All rights reserved.</span></p>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
     <a href="#hero" class="scroll-to-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- External JavaScript Libraries -->
+    <!-- External JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 

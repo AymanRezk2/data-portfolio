@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aymanrezk2.github.io/data-portfolio/sitemap.xml

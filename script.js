@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Set dark theme as default (brand is dark-first)
+    if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+
     // ------------------ Theme Toggle ------------------
     const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -157,76 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ------------------ EmailJS Initialization ------------------
-    if (window.emailjs) {
-        emailjs.init('A0vwECOW8hLjsaepw'); // Public key
-    }
-
-    // ------------------ Contact Form ------------------
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm && window.emailjs) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name');
-            const email = document.getElementById('email');
-            const subject = document.getElementById('subject');
-            const message = document.getElementById('message');
-
-            let isValid = true;
-
-            if (name.value.trim() === '') { isValid = false; showError(name, 'Name is required.'); } else hideError(name);
-            if (email.value.trim() === '') {
-                isValid = false; showError(email, 'Email is required.');
-            } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value)) {
-                isValid = false; showError(email, 'Enter a valid email.');
-            } else {
-                hideError(email);
-            }
-            if (message.value.trim() === '') { isValid = false; showError(message, 'Message is required.'); } else hideError(message);
-
-            if (isValid) {
-                const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const thankYou = document.getElementById('form-thank-you');
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = 'Sending…';
-
-                emailjs.send(
-                    'service_51uuijn', // Service ID
-                    'template_uonr6nn', // Template ID
-                    { name: name.value, email: email.value, subject: subject.value, message: message.value }
-                ).then(() => {
-                    if (thankYou) thankYou.style.display = 'block';
-                    contactForm.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                }).catch(() => {
-                    alert('Failed to send message. Please try again in a moment.');
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                });
-            }
-        });
-    }
-
-    function showError(input, msg) {
-        const error = input.parentElement.querySelector('.form-error');
-        if (!error) return;
-        error.textContent = msg;
-        input.classList.add('is-invalid');
-    }
-    function hideError(input) {
-        const error = input.parentElement.querySelector('.form-error');
-        if (!error) return;
-        error.textContent = '';
-        input.classList.remove('is-invalid');
-    }
-
     // ------------------ Update Year ------------------
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
-
-
